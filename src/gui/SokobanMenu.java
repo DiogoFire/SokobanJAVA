@@ -15,6 +15,8 @@ public class SokobanMenu extends javax.swing.JFrame {
      */
     public SokobanMenu() {
         initComponents();
+        setLocationRelativeTo(null); // Center the frame on the screen
+        unfocusButtons();
     }
     
 
@@ -114,8 +116,8 @@ public class SokobanMenu extends javax.swing.JFrame {
     private void buttonJogarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonJogarActionPerformed
         // TODO add your handling code here:
         
-        SokobanMain sokobanMain = new SokobanMain();
-        sokobanMain.setVisible(true);
+        LevelSelection levelSelection = new LevelSelection();
+        levelSelection.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_buttonJogarActionPerformed
 
@@ -131,6 +133,12 @@ public class SokobanMenu extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_buttonSobreActionPerformed
 
+    public void unfocusButtons(){
+        buttonJogar.setFocusable(false);
+        buttonSair.setFocusable(false);
+        buttonSobre.setFocusable(false);
+    }
+    
     /**
      * @param args the command line arguments
      */

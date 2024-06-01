@@ -21,7 +21,7 @@ public class Goal extends Clear{
 
     public Goal() {
         super(Color.CYAN);
-        image = loadImage("/resources/sokobanpack/PNG/Default size/Environment/environment_12.png");
+        image = loadImage("/resources/goal.png");
     }
 
     public final Image loadImage(String resourceName) {

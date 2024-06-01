@@ -21,6 +21,8 @@ public class SokobanAbout extends javax.swing.JFrame {
     public SokobanAbout() {
         initComponents();
         resizeImages();
+        setLocationRelativeTo(null); // Center the frame on the screen
+        unfocusButtons();
     }
 
     /**
@@ -117,6 +119,11 @@ public class SokobanAbout extends javax.swing.JFrame {
         ImageIcon icon = ImageResizer.resizeImage("/resources/voltar.png", 50, 50);
         buttonVoltar.setIcon(icon);
     }
+    
+    public void unfocusButtons(){
+        buttonVoltar.setFocusable(false);
+    }
+    
     /**
      * @param args the command line arguments
      */

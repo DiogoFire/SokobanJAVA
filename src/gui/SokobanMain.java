@@ -4,7 +4,6 @@
  */
 package gui;
 
-import java.awt.Image;
 import javax.swing.ImageIcon;
 import other.ImageResizer;
 
@@ -13,6 +12,8 @@ import other.ImageResizer;
  * @author diogo
  */
 public class SokobanMain extends javax.swing.JFrame {
+    
+    private static SokobanMain currentInstance;
 
     /**
      * Creates new form SokobanMain
@@ -20,6 +21,9 @@ public class SokobanMain extends javax.swing.JFrame {
     public SokobanMain() {
         initComponents();
         resizeImages();
+        setLocationRelativeTo(null); // Center the frame on the screen
+        currentInstance = this; // Set the current instance
+        unfocusButtons();
     }
 
     /**
@@ -77,8 +81,8 @@ public class SokobanMain extends javax.swing.JFrame {
 
     private void buttonVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonVoltarActionPerformed
         // TODO add your handling code here:
-        SokobanMenu sokobanMenu = new SokobanMenu();
-        sokobanMenu.setVisible(true);
+        LevelSelection levelSelection = new LevelSelection();
+        levelSelection.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_buttonVoltarActionPerformed
 
@@ -89,6 +93,28 @@ public class SokobanMain extends javax.swing.JFrame {
     }
     
     
+    
+    // Static method to get the current instance
+    public static SokobanMain getCurrentInstance() {
+        return currentInstance;
+    }
+    
+    // Method to close the current instance
+    public static void closeCurrentInstance() {
+        if (currentInstance != null) {
+            currentInstance.dispose();
+        }
+    }
+    
+    // metodo publico para alterar o puzzle do componente do jogo de sokoban
+    public void setSokobanPuzzle(String puzzle) {
+        sokoban1.setPuzzle(puzzle); // Set puzzle for Sokoban1
+    }
+    
+    public void unfocusButtons(){
+        buttonVoltar.setFocusable(false);
+    }
+        
     /**
      * @param args the command line arguments
      */

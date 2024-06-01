@@ -21,8 +21,6 @@ public class Player extends Element{
     protected Image image;
     
     public Player(){
-        super(Color.BLACK);
-        image = loadImage("/resources/sokobanpack/PNG/Default size/Player/player_05.png");
     }
     
     public final Image loadImage(String resourceName) {
@@ -32,7 +30,6 @@ public class Player extends Element{
             //ler a imagem e retornar o objeto
             return ImageIO.read(in);
         } catch (IOException ex) {
-            System.out.println("teste");
             return null;
         }
 
@@ -40,6 +37,7 @@ public class Player extends Element{
     
     @Override
     public void draw(Graphics gr, int px, int py, int width, int height) {
+        image = loadImage("/resources/player.png");
         if (image != null) {
             gr.drawImage(image, px, py, width, height, null);
         } else {

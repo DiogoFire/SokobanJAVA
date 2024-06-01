@@ -8,8 +8,7 @@ import java.awt.Graphics;
 import javax.swing.JComponent;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-//import java.nio.file.Files;
-//import java.nio.file.Path;
+import gui.LevelCompleteDialog;
 /**
  *
  * @author diogo
@@ -34,6 +33,8 @@ public class Sokoban extends JComponent implements KeyListener{
              #######
             """;
     
+    
+    // construtor por defeito
     public Sokoban(){
         setPuzzle(defaultPuzzle);
         addKeyListener(this);
@@ -53,6 +54,17 @@ public class Sokoban extends JComponent implements KeyListener{
             }
         }
         repaint();
+    }
+    
+    public boolean isLevelComplete() {
+        for (Element[] row : world) {
+            for (Element element : row) {
+                if (element instanceof Goal && !(element instanceof Block)) {
+                    return false; // There's at least one goal without a block on it
+                }
+            }
+        }
+        return true; // All goals have a block on them
     }
     
     public void paintComponent(Graphics gr){
@@ -117,6 +129,10 @@ public class Sokoban extends JComponent implements KeyListener{
             case KeyEvent.VK_D:
                 moveXY(1, 0); // DIREITA
                 break;
+        }
+        if (isLevelComplete()) {
+            LevelCompleteDialog dialog = new LevelCompleteDialog(new javax.swing.JFrame(), true);
+            dialog.setVisible(true);
         }
     }
     

@@ -20,7 +20,7 @@ public class Wall extends Element{
     protected Image image;
     
     public Wall() {
-        image = loadImage("/resources/tileset/tile101.png");
+        image = loadImage("/resources/parede.png");
     }
     
     public final Image loadImage(String resourceName) {

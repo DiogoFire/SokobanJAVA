@@ -3,8 +3,22 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/coding/SokobanPOO/src/gui/SokobanMain.java</file>
             <file>file:/C:/coding/SokobanPOO/src/gui/SokobanMenu.java</file>
+            <file>file:/C:/coding/SokobanPOO/src/components/Sokoban.java</file>
+            <file>file:/C:/coding/SokobanPOO/src/components/Player.java</file>
+            <file>file:/C:/coding/SokobanPOO/src/components/Block.java</file>
+            <file>file:/C:/coding/SokobanPOO/src/components/Clear.java</file>
+            <file>file:/C:/coding/SokobanPOO/src/gui/SokobanAbout.java</file>
+            <file>file:/C:/coding/SokobanPOO/src/components/Element.java</file>
+            <file>file:/C:/coding/SokobanPOO/src/components/Wall.java</file>
+            <file>file:/C:/coding/SokobanPOO/src/PlayGame.java</file>
+            <file>file:/C:/coding/SokobanPOO/src/gui/SokobanMain.java</file>
+            <file>file:/C:/coding/SokobanPOO/src/gui/LevelSelection.java</file>
+            <file>file:/C:/coding/SokobanPOO/src/components/Piece.java</file>
+            <file>file:/C:/coding/SokobanPOO/nbproject/build-impl.xml</file>
+            <file>file:/C:/coding/SokobanPOO/src/components/Goal.java</file>
+            <file>file:/C:/coding/SokobanPOO/src/gui/LevelCompleteDialog.java</file>
+            <file>file:/C:/coding/SokobanPOO/src/components/Empty.java</file>
         </group>
     </open-files>
 </project-private>
