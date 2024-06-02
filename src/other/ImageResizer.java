@@ -8,15 +8,19 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 
 /**
- *
+ * Classe ImageResizer que redimensiona imagens
  * @author diogo
  */
 public class ImageResizer {
     public static ImageIcon resizeImage(String imagePath, int width, int height) {
+        // cria um ImageIcon
         ImageIcon icon = new ImageIcon(ImageResizer.class.getResource(imagePath));
-        Image image = icon.getImage(); // Transform the image
-        Image newimg = image.getScaledInstance(width, height, java.awt.Image.SCALE_SMOOTH); // Scale the image smoothly
-        return new ImageIcon(newimg);  // Transform back
+        // transforma a imagem
+        Image image = icon.getImage();
+        // redimensiona a imagem 
+        Image newimg = image.getScaledInstance(width, height, java.awt.Image.SCALE_SMOOTH);
+        // transforma de volta para ImageIcon
+        return new ImageIcon(newimg);
     }
     
 }

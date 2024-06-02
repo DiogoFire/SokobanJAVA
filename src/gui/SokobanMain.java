@@ -8,7 +8,7 @@ import javax.swing.ImageIcon;
 import other.ImageResizer;
 
 /**
- *
+ * Form SokobanMain que representa a interface principal do jogo
  * @author diogo
  */
 public class SokobanMain extends javax.swing.JFrame {
@@ -20,10 +20,12 @@ public class SokobanMain extends javax.swing.JFrame {
      */
     public SokobanMain() {
         initComponents();
-        resizeImages();
-        setLocationRelativeTo(null); // Center the frame on the screen
-        currentInstance = this; // Set the current instance
-        unfocusButtons();
+        resizeImages(); // chama o metodo que redimensiona as imagens
+        setLocationRelativeTo(null); // centra a form no ecra
+        
+        // instancia atual, utilizado para passar a referencia para o LevelCompleteDialog
+        currentInstance = this;
+        unfocusButtons(); // chama o metodo que da unfocus a todos os botoes
     }
 
     /**
@@ -79,14 +81,17 @@ public class SokobanMain extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    // quando o botao voltar é pressionado
     private void buttonVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonVoltarActionPerformed
-        // TODO add your handling code here:
+        // inicializa a form LevelSelection
         LevelSelection levelSelection = new LevelSelection();
+        // torna a form LevelSelection visivel
         levelSelection.setVisible(true);
+        // torna a form SokobanMain invisivel
         this.setVisible(false);
     }//GEN-LAST:event_buttonVoltarActionPerformed
 
-    
+    // metodo para redimensionar imagens
     public void resizeImages(){
         ImageIcon icon = ImageResizer.resizeImage("/resources/voltar.png", 50, 50);
         buttonVoltar.setIcon(icon);
@@ -94,23 +99,24 @@ public class SokobanMain extends javax.swing.JFrame {
     
     
     
-    // Static method to get the current instance
+    // metodo que retorna a instancia SokobanMain atual
     public static SokobanMain getCurrentInstance() {
         return currentInstance;
     }
     
-    // Method to close the current instance
+    // metodo que fecha a instancia SokobanMain atual
     public static void closeCurrentInstance() {
         if (currentInstance != null) {
             currentInstance.dispose();
         }
     }
     
-    // metodo publico para alterar o puzzle do componente do jogo de sokoban
+    // metodo que altera o puzzle do componente Sokoban
     public void setSokobanPuzzle(String puzzle) {
-        sokoban1.setPuzzle(puzzle); // Set puzzle for Sokoban1
+        sokoban1.setPuzzle(puzzle);
     }
     
+    // metodo que da unfocus a todos os botoes
     public void unfocusButtons(){
         buttonVoltar.setFocusable(false);
     }

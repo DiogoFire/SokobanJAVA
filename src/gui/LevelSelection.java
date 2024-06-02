@@ -7,7 +7,6 @@ package gui;
 import javax.swing.ImageIcon;
 import other.ImageResizer;
 import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -15,21 +14,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
+ * Form LevelSelection que apresenta uma seleção de diferentes niveis, 
+ * que sao lidos a partir de um ficheiro de texto
  * @author diogo
  */
 public class LevelSelection extends javax.swing.JFrame {
     
+    // Array levels que chama a função loadLevels para carregar os niveis
     List<String> levels = loadLevels("/resources/levels.txt");
 
     /**
      * Creates new form LevelSelection
      */
     public LevelSelection() {
-        initComponents();
-        resizeImages();
-        unfocusAllButtons();
-        setLocationRelativeTo(null); // Center the frame on the screen
+        initComponents(); 
+        resizeImages(); // chama o metodo para redimensionar todas as imagens
+        unfocusAllButtons(); // chama o metodo para dar unfocus a todos os botoes
+        setLocationRelativeTo(null); // centra a form no ecra
     }
 
     /**
@@ -194,126 +195,182 @@ public class LevelSelection extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    // quando o botao de nivel 1 é pressionado
     private void level1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_level1ActionPerformed
-        // TODO add your handling code here:
+        // abre a form SokobanMain
         SokobanMain sokobanMain = new SokobanMain();
+        // chama o metodo setSokobanPuzzle, que muda o nivel carregado no elemento Sokoban
         sokobanMain.setSokobanPuzzle(levels.get(0));
+        // torna o sokobanMain visivel
         sokobanMain.setVisible(true);
+        // torna a form LevelSelection invisivel
         this.setVisible(false);  
     }//GEN-LAST:event_level1ActionPerformed
 
+    // quando o botao de voltar é pressionado
     private void voltarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarBtActionPerformed
-        // TODO add your handling code here:
+        // abre a form SokobanMenu
         SokobanMenu sokobanMenu = new SokobanMenu();
+        // torna visivel o sokobanMenu
         sokobanMenu.setVisible(true);
+        // torna a form LevelSelection invisivel
         this.setVisible(false);
     }//GEN-LAST:event_voltarBtActionPerformed
 
+    // quando o botao de nivel 2 é pressionado
     private void level2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_level2ActionPerformed
-        // TODO add your handling code here:
+        // abre a form SokobanMain
         SokobanMain sokobanMain = new SokobanMain();
+        // chama o metodo setSokobanPuzzle, que muda o nivel carregado no elemento Sokoban
         sokobanMain.setSokobanPuzzle(levels.get(1));
+        // torna o sokobanMain visivel
         sokobanMain.setVisible(true);
+        // torna a form LevelSelection invisivel
         this.setVisible(false);  
     }//GEN-LAST:event_level2ActionPerformed
 
+    // quando o botao de nivel 3 é pressionado
     private void level3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_level3ActionPerformed
-        // TODO add your handling code here:
+        // abre a form SokobanMain
         SokobanMain sokobanMain = new SokobanMain();
+        // chama o metodo setSokobanPuzzle, que muda o nivel carregado no elemento Sokoban
         sokobanMain.setSokobanPuzzle(levels.get(2));
+        // torna o sokobanMain visivel
         sokobanMain.setVisible(true);
+        // torna a form LevelSelection invisivel
         this.setVisible(false);  
     }//GEN-LAST:event_level3ActionPerformed
 
+    // quando o botao de nivel 4 é pressionado
     private void level4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_level4ActionPerformed
-        // TODO add your handling code here:
+        // abre a form SokobanMain
         SokobanMain sokobanMain = new SokobanMain();
+        // chama o metodo setSokobanPuzzle, que muda o nivel carregado no elemento Sokoban
         sokobanMain.setSokobanPuzzle(levels.get(3));
+        // torna o sokobanMain visivel
         sokobanMain.setVisible(true);
-        this.setVisible(false);
+        // torna a form LevelSelection invisivel
+        this.setVisible(false);  
     }//GEN-LAST:event_level4ActionPerformed
 
+    // quando o botao de nivel 5 é pressionado
     private void level5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_level5ActionPerformed
-        // TODO add your handling code here:
+        // abre a form SokobanMain
         SokobanMain sokobanMain = new SokobanMain();
+        // chama o metodo setSokobanPuzzle, que muda o nivel carregado no elemento Sokoban
         sokobanMain.setSokobanPuzzle(levels.get(4));
+        // torna o sokobanMain visivel
         sokobanMain.setVisible(true);
-        this.setVisible(false);
+        // torna a form LevelSelection invisivel
+        this.setVisible(false);  
     }//GEN-LAST:event_level5ActionPerformed
 
+    // quando o botao de nivel 6 é pressionado
     private void level6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_level6ActionPerformed
-        // TODO add your handling code here:
+        // abre a form SokobanMain
         SokobanMain sokobanMain = new SokobanMain();
+        // chama o metodo setSokobanPuzzle, que muda o nivel carregado no elemento Sokoban
         sokobanMain.setSokobanPuzzle(levels.get(5));
+        // torna o sokobanMain visivel
         sokobanMain.setVisible(true);
-        this.setVisible(false);
+        // torna a form LevelSelection invisivel
+        this.setVisible(false);  
     }//GEN-LAST:event_level6ActionPerformed
 
+    // quando o botao de nivel 7 é pressionado
     private void level7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_level7ActionPerformed
-        // TODO add your handling code here:
+        // abre a form SokobanMain
         SokobanMain sokobanMain = new SokobanMain();
+        // chama o metodo setSokobanPuzzle, que muda o nivel carregado no elemento Sokoban
         sokobanMain.setSokobanPuzzle(levels.get(6));
+        // torna o sokobanMain visivel
         sokobanMain.setVisible(true);
-        this.setVisible(false);
+        // torna a form LevelSelection invisivel
+        this.setVisible(false);  
     }//GEN-LAST:event_level7ActionPerformed
 
+    // quando o botao de nivel 8 é pressionado
     private void level8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_level8ActionPerformed
-        // TODO add your handling code here:
+        // abre a form SokobanMain
         SokobanMain sokobanMain = new SokobanMain();
+        // chama o metodo setSokobanPuzzle, que muda o nivel carregado no elemento Sokoban
         sokobanMain.setSokobanPuzzle(levels.get(7));
+        // torna o sokobanMain visivel
         sokobanMain.setVisible(true);
-        this.setVisible(false);
+        // torna a form LevelSelection invisivel
+        this.setVisible(false);  
     }//GEN-LAST:event_level8ActionPerformed
 
+    // quando o botao de nivel 9 é pressionado
     private void level9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_level9ActionPerformed
-        // TODO add your handling code here:
+        // abre a form SokobanMain
         SokobanMain sokobanMain = new SokobanMain();
+        // chama o metodo setSokobanPuzzle, que muda o nivel carregado no elemento Sokoban
         sokobanMain.setSokobanPuzzle(levels.get(8));
+        // torna o sokobanMain visivel
         sokobanMain.setVisible(true);
-        this.setVisible(false);
+        // torna a form LevelSelection invisivel
+        this.setVisible(false);  
     }//GEN-LAST:event_level9ActionPerformed
 
+    // quando o botao de nivel 10 é pressionado
     private void level10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_level10ActionPerformed
-        // TODO add your handling code here:
+        // abre a form SokobanMain
         SokobanMain sokobanMain = new SokobanMain();
+        // chama o metodo setSokobanPuzzle, que muda o nivel carregado no elemento Sokoban
         sokobanMain.setSokobanPuzzle(levels.get(9));
+        // torna o sokobanMain visivel
         sokobanMain.setVisible(true);
-        this.setVisible(false);
+        // torna a form LevelSelection invisivel
+        this.setVisible(false);  
     }//GEN-LAST:event_level10ActionPerformed
 
     /**
      * @param args the command line arguments
      */
     
+    // método que carrega os níveis de um ficheiro e guarda-os num ArrayList
     public static List<String> loadLevels(String file) {
-        List<String> levels = new ArrayList<>(); // List to store levels
+        // lista para armazenar os níveis
+        List<String> levels = new ArrayList<>();
+        // obtém o InputStream do ficheiro
         InputStream inputStream = LevelSelection.class.getResourceAsStream(file);
+        // verifica se o InputStream é válido
         if (inputStream != null) {
+            // cria um BufferedReader para ler o ficheiro
             try (BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream))) {
+                // StringBuilder para construir os níveis
                 StringBuilder levelBuilder = new StringBuilder();
                 String line;
+                // lê cada linha do arquivo
                 while ((line = reader.readLine()) != null) {
+                    // verifica se a linha está vazia, indicando o fim do nível
                     if (line.trim().isEmpty()) {
-                        // Empty line indicates the end of a level
+                        // adiciona o nível completo à lista
                         levels.add(levelBuilder.toString());
-                        levelBuilder = new StringBuilder(); // Reset StringBuilder for the next level
+                        // da reset ao StringBuilder para o próximo nível
+                        levelBuilder = new StringBuilder();
                     } else {
-                        levelBuilder.append(line).append("\n"); // Append line to level
+                        // adiciona a linha ao nível
+                        levelBuilder.append(line).append("\n");
                     }
                 }
-                // Add the last level if there's content remaining
+                // adiciona o último nível se houver conteúdo restante
                 if (levelBuilder.length() > 0) {
                     levels.add(levelBuilder.toString());
                 }
-            } catch (IOException e) {
+            } catch (IOException e) { // trata exceções
                 e.printStackTrace();
             }
         } else {
+            // imprime uma mensagem de erro se o ficheiro nao for encontrado
             System.err.println("File not found: " + file);
         }
+        // retorna o ArrayList dos niveis carregados
         return levels;
     }
     
+    // metodo para redimensionar as imagens
     public void resizeImages(){
         ImageIcon icon1 = ImageResizer.resizeImage("/resources/voltar.png", 50, 50);
         voltarBt.setIcon(icon1);
@@ -322,6 +379,7 @@ public class LevelSelection extends javax.swing.JFrame {
         levelPickerLabel.setIcon(icon2);
     }
     
+    // metodo para tornar todos os botoes unfocusable
     public void unfocusAllButtons(){
         level1.setFocusable(false);
         level2.setFocusable(false);

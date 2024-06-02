@@ -5,7 +5,7 @@
 package gui;
 
 /**
- *
+ * 
  * @author diogo
  */
 public class SokobanMenu extends javax.swing.JFrame {
@@ -15,8 +15,8 @@ public class SokobanMenu extends javax.swing.JFrame {
      */
     public SokobanMenu() {
         initComponents();
-        setLocationRelativeTo(null); // Center the frame on the screen
-        unfocusButtons();
+        setLocationRelativeTo(null); // centra a form no ecra
+        unfocusButtons(); // chama o metodo que redimensiona todos os botoes
     }
     
 
@@ -113,26 +113,35 @@ public class SokobanMenu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    // quando o botao Jogar é pressionado
     private void buttonJogarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonJogarActionPerformed
         // TODO add your handling code here:
         
+        // inicializa a form LevelSelection
         LevelSelection levelSelection = new LevelSelection();
+        // torna a form LevelSelection visivel
         levelSelection.setVisible(true);
+        // torna a form SokobanMenu invisivel
         this.setVisible(false);
     }//GEN-LAST:event_buttonJogarActionPerformed
 
+    // quando o botao Sair é pressionado
     private void buttonSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSairActionPerformed
-        // TODO add your handling code here:
+        // fecha o programa
         System.exit(0);
     }//GEN-LAST:event_buttonSairActionPerformed
 
+    // quando o botao Sobre é pressionado
     private void buttonSobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSobreActionPerformed
-        // TODO add your handling code here:
+        // inicializa a form SokobanAbout
         SokobanAbout sokobanAbout = new SokobanAbout();
+        // torna a form SokobanAbout visivel
         sokobanAbout.setVisible(true);
+        // torna a form SokobanMenu invisivel
         this.setVisible(false);
     }//GEN-LAST:event_buttonSobreActionPerformed
 
+    // metodo para dar unfocus a todos os botoes
     public void unfocusButtons(){
         buttonJogar.setFocusable(false);
         buttonSair.setFocusable(false);

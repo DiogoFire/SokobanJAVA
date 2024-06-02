@@ -5,7 +5,7 @@
 package gui;
 
 /**
- *
+ * JDialog Form que aparece quando um nivel é completado 
  * @author diogo
  */
 public class LevelCompleteDialog extends javax.swing.JDialog {
@@ -16,8 +16,8 @@ public class LevelCompleteDialog extends javax.swing.JDialog {
     public LevelCompleteDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        setLocationRelativeTo(null); // Center the frame on the screen
-        unfocusButtons();
+        setLocationRelativeTo(null); // centra a form no ecra
+        unfocusButtons(); // chama um metodo que da unfocus a todos os botoes
     }
 
     /**
@@ -71,16 +71,17 @@ public class LevelCompleteDialog extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void levelCompleteReturnButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_levelCompleteReturnButtonActionPerformed
-        // Close the LevelCompleteDialog form
+        // fecha a form LevelCompleteDialog
         dispose();
 
-        // Close the SokobanMain form
+        // fecha a form SokobanMain
         SokobanMain.closeCurrentInstance();
         
-        // Open the LevelSelection form
+        // abre a form LevelSelection
         new gui.LevelSelection().setVisible(true);
     }//GEN-LAST:event_levelCompleteReturnButtonActionPerformed
 
+    // metodo que da unfocus a todos os botoes
     public void unfocusButtons(){
         levelCompleteReturnButton.setFocusable(false);
     }

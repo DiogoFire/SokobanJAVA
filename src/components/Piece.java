@@ -5,28 +5,33 @@
 package components;
 
 /**
- *
+ * enum Piece que é usado como uma biblioteca para os diferentes tipos de elementos no jogo
  * @author diogo
  */
 public enum Piece {
-    WALL('#'),
-    PLAYER('@'),
-    BLOCK('$'),
-    GOAL('.'),
-    BLOCKGOAL('*'),
-    PLAYERGOAL('+'),
-    EMPTY(' ');
+    WALL('#'),         // parede
+    PLAYER('@'),       // jogador
+    BLOCK('$'),        // nloco (caixas)
+    GOAL('.'),         // objetivo
+    BLOCKGOAL('*'),    // bloco no objetivo
+    PLAYERGOAL('+'),   // jogador no objetivo
+    EMPTY(' ');        // espaço vazio
 
+    
+    // caracter associado à peça
     private final char ch;
 
+    // construtor privado que associa um caracter a cada peça
     private Piece(char ch) {
         this.ch = ch;
     }
 
+    // getter do caracter
     public char getChar(){
         return ch;
     }
     
+    // metodo que verifica o caracter e retorna o elemento correspondente
     public static Element getElement(char ch){
         if(ch == WALL.ch) return new Wall();
         if(ch == BLOCK.ch) return new Block();

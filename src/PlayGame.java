@@ -4,7 +4,9 @@
  */
 
 /**
- *
+ * Classe PlayGame que inicializa a primeira form e aplica o tema FlatDarkLaf 
+ * https://www.formdev.com/flatlaf/
+ * 
  * @author diogo
  */
 
@@ -17,13 +19,13 @@ public class PlayGame {
 
     public static void main(String[] args) {
         try {
-            // Set FlatLaf Dark theme
+            // aplica o tema FlatDarkLaf
             UIManager.setLookAndFeel(new FlatDarkLaf());
         } catch (UnsupportedLookAndFeelException e) {
             e.printStackTrace();
         }
 
-        // Create and show the SokobanMenu form
+        // Cria e apresenta a form SokobanMenu
         SwingUtilities.invokeLater(() -> {
             new gui.SokobanMenu().setVisible(true);
         });
